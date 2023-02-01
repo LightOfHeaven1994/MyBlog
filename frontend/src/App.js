@@ -1,16 +1,36 @@
 import './App.css';
 import Home from './pages/Home';
+import Nav from './components/Nav'
 import Projects from './pages/Projects';
-import Login from './components/Login';
-import Register from './components/Register';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
+import Footer from './components/Footer';
+
+const Layout = () => {
+  return (
+    <>
+      <Nav/>
+      <Outlet/>
+      <Footer/>
+    </>
+  )
+}
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>
-      <Home/>
-    </div>
+    element: <Layout/>,
+    children: [
+      {
+        path: "/",
+        element: <Home/>
+      },
+      {
+        path: "projects",
+        element: <Projects/>
+      },
+    ]
   },
   {
     path: "/login",
@@ -24,18 +44,14 @@ const router = createBrowserRouter([
       <Register/>
     </div>
   },
-  {
-    path: "/projects",
-    element: <div>
-      <Projects/>
-    </div>
-  },
 ])
 
 function App() {
   return (
-    <div>
-      <RouterProvider router={router}/>
+    <div className='app'>
+      <div className='container'>
+        <RouterProvider router={router}/>
+      </div>
     </div>
   );
 }

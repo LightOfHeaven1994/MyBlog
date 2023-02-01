@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+.app{
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app .container{
+  width: 1024px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Auth styles: Login & Register */
+.auth{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  background-color: #4f5b66;
+
+}
+
+.auth-header{
+  font-size: 20px;
+  color: #dbbdc1;
+  margin-bottom: 20px;
+}
+
+.auth-form{
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background-color: white;
+  gap: 10px;
+  width: 200px;
+  min-height: 200px;;
+}
+
+.auth-form input{
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #4f5b66;
+}
+
+.auth-form button{
+  padding: 10px;
+  border: none;
+  background-color: #dbbdc1;
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.auth-form span{
+  text-align: center;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.auth-form p{
+  text-align: center;
+  color: red;
+  font-size: 12px;
+}
+
+/* Navigation styles */
+
+.nav .container{
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img{
+  width: 100px;
+}
+
+.nav-items{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-items span{
+  cursor: pointer;
+}
+
+.nav-link{
+  color: inherit;
+
+}
+
+/* Footer styles */
+
+.footer {
+  padding: 10px 0;
+  height: 30px;
+  text-align: center;
 }
