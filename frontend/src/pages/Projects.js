@@ -8,8 +8,7 @@ function Projects () {
     const [items, setItems] = useState([]);
 
     const fetchItems = async() => {
-        const data = await fetch('/projects');
-        console.log(data);
+        const data = await fetch('/users');
         const items = await data.json();
         setItems(items);
     };
@@ -20,9 +19,9 @@ function Projects () {
             {
             items.map(item => (
                 <div>
-                    <p>{item.name}</p>
-                    <p>{item.link}</p>
-                    <p>{item.desc}</p>
+                    <p>{item.id}</p>
+                    <p>{item.email}</p>
+                    <p>{item.password}</p>
                 </div>
             ))
             }

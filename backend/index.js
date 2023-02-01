@@ -1,14 +1,11 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const routesHandler = require('./routes/handler.js');
+import express from 'express';
+import authRoutes from './routes/auth.js'
 
 const app = express();
 
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
-app.use('/', routesHandler);
+app.use(express.json())
+app.use("/api/auth", authRoutes)
 
-const PORT = 4000; // backend routing port
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
+app.listen(8800,()=>{
+    console.log("Connected!")
 })

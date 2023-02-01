@@ -7,7 +7,7 @@ function Nav() {
         <div className='nav'>
             <div className='container'>
                 <div className='logo'>
-                    <img src={Logo}></img>
+                    <img src={Logo} alt=""></img>
                 </div>
                 <div className='nav-items'>
                     <Link to='/' className="nav-item nav-link active">Home</Link>
