@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
 import Footer from './components/Footer';
+import Wishlist from './pages/Wishlist';
 
 const Layout = () => {
   return (
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         path: "projects",
         element: <Projects/>
       },
+      {
+        path: "wishlist",
+        element: <Wishlist/>
+      }
     ]
   },
   {
