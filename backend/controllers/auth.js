@@ -24,9 +24,21 @@ export const register = (req, res) => {
     })
 }
 
-// export const login = (req, res) => {
-    
-// }
+export const login = (req, res) => {
+    // Validate existing user
+    const query = "SELECT * FROM users WHERE username = ?"
+
+    db.query(query, [req.body.username], (err, data) => {
+        if(err) return res.json(err);
+        if(data.length ===0) return res.status(404).json("User not found!")
+
+        const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0].password)
+
+        if(!isPasswordCorrect) return res.status(401).json("Username or password is wrong!")
+        else return res.status(200).json("Logged in successfully!")
+
+    })
+}
 
 // export const logout = (req, res) => {
     
